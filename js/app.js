@@ -46,6 +46,26 @@ $(document).ready(function() {
 
     function displaySeats(distribution)
     {
+        // Card
+        var scs = $("#seat-count-summary");
+        var seats = $("#total-seats").val();
+        var partySeats = {};
+
+        scs.empty();
+
+        for (i in distribution) {
+            if (i > (seats-1)) break;
+            if (partySeats[distribution[i].no] === undefined)
+                partySeats[distribution[i].no] = 1;
+            else
+                partySeats[distribution[i].no]++;
+        }
+        console.log(distribution);
+        console.log(partySeats);
+        for (i in partySeats) {
+            scs.append($("<li>").addClass("list-group-item").text(i + '. saraksts: ' + partySeats[i] + ' mandāti'))
+        }
+        // Table
         $("#distribution-table tbody").empty();
         for (i in distribution) {
             $("#distribution-table tbody")
