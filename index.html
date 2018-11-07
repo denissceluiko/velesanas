@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SP balsu skaitīšana</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row my-3">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">Pamatdati</div>
+                    <div class="card-body">
+                        <!--<div class="form-group row">-->
+                            <!--<label for="total-votes" class="col-9">Kopā nobalsojušie</label>-->
+                            <!--<input type="number" name="total-votes" id="total-votes" value="0" class="form-control col-3">-->
+                        <!--</div>-->
+                        <div class="form-group row">
+                            <label for="party-count" class="col-9">Saraksti</label>
+                            <input type="number" name="party-count" data-count="1" id="party-count" value="1" min="1" class="form-control col-3">
+                        </div>
+                        <div class="form-group row">
+                            <label for="total-seats" class="col-9">Mandātu skaits</label>
+                            <input type="number" id="total-seats" value="1" class="form-control col-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <button class="btn btn-primary btn-block" id="count-distribution">Skaitīt mandātu sadalījumu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="party-list">
+            <div class="col-4" id="party-1">
+                <div class="card">
+                    <div class="card-header">1. saraksts</div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="party-1-candidates" class="col-9">Kandidātu skaits</label>
+                            <input type="number" id="party-1-candidates" min="0" class="form-control col-3">
+                        </div>
+                        <div class="form-group row">
+                            <label for="party-1-votes" class="col-9">Balsojumi par sarakstu</label>
+                            <input type="number" id="party-1-votes" min="0" class="form-control col-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <table class="table" id="distribution-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Saraksts</th>
+                        <th>Dalījums</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
